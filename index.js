@@ -25,7 +25,11 @@ const questions = [
   },
   {
     type: "list",
-    choices: ["MIT License", "Apache License 2.0", "GNU General Public License v3.0"],
+    choices: [
+      "MIT License",
+      "Apache License 2.0",
+      "GNU General Public License v3.0",
+    ],
     name: "license",
     message: "What is your project license?",
   },
@@ -43,7 +47,11 @@ const questions = [
     type: "input",
     name: "questions",
     message: "What is your GitHub username?",
-    message: "What is your email address?"
+  },
+  {
+    type: "input",
+    name: "questions",
+    message: "What is your email address?",
   },
 ];
 
@@ -58,7 +66,7 @@ init();
 
 // running inquirer
 inquirer
-  .prompt(questions[0])
+  .prompt(questions)
   .then((data) => {
     console.log(data);
   })
