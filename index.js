@@ -38,9 +38,9 @@ const questions = [
   {
     type: "list",
     choices: [
-      "MIT License",
-      "Apache License 2.0",
-      "GNU General Public License v3.0",
+      "MIT",
+      "ISC",
+      "GPL-3.0",
     ],
     name: "license",
     message: "What is your project license?",
@@ -57,12 +57,12 @@ const questions = [
   },
   {
     type: "input",
-    name: "questions",
+    name: "github",
     message: "What is your GitHub username?",
   },
   {
     type: "input",
-    name: "questions",
+    name: "email",
     message: "What is your email address?",
   },
 ];
@@ -77,12 +77,6 @@ function writeToFile(fileName, data) {
         }
     })
 }
-
-// function to initialize program
-function init() {}
-
-// function call to initialize program
-init();
 
 // running inquirer
 inquirer
