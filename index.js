@@ -1,6 +1,18 @@
 // defining inquirer variable
 const inquirer = require("inquirer");
 
+// defining fs variable
+const fs = require("fs");
+
+// defining util variable
+const util = require("util");
+
+// defining util fs promifier
+const writeFileAsync = util.promisify(fs.writeFile);
+
+// defining generateMarkdown
+const generateMarkdown = require("./utils/generateMarkdown");
+
 // array of questions for user
 const questions = [
   {
@@ -56,7 +68,15 @@ const questions = [
 ];
 
 // function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    writeFileAsync(fileName, data).then(function(){
+        console.log("You have written the file!");
+    }).catch(function(err){
+        if (err) {
+            return err;
+        }
+    })
+}
 
 // function to initialize program
 function init() {}
@@ -68,7 +88,7 @@ init();
 inquirer
   .prompt(questions)
   .then((data) => {
-    console.log(data);
+    writeToFile("USERREADME.md", generateMarkdown(data));
   })
   .catch((err) => {
     if (err) {
