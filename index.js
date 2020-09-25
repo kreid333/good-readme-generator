@@ -52,7 +52,7 @@ const questions = [
   },
   {
     type: "input",
-    name: "test",
+    name: "tests",
     message: "What tests did you write for your application (if applicable)?",
   },
   {
